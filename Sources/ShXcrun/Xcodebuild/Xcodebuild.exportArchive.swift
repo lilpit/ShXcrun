@@ -17,6 +17,6 @@ extension Xcodebuild {
       buffer.append(" -allowProvisioningDeviceRegistration")
     }
     
-    try sh(sink, buffer)
+    try sh(sink, buffer, workingDirectory: workingDirectory)
   }
 }

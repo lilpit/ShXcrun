@@ -3,7 +3,7 @@ import Sh
 extension Xcodebuild {
 
   public func showSDKs() throws -> [SDK] {
-    try sh([SDK].self, serializedCommand(action: "-showsdks -json"))
+    try sh([SDK].self, serializedCommand(action: "-showsdks -json"), workingDirectory: workingDirectory)
   }
 
   public struct SDK: Decodable {

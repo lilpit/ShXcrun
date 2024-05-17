@@ -6,6 +6,6 @@ extension Xcodebuild {
   /// This will also produce an xctestrun file in the build root.
   /// This requires specifying a `scheme`.
   public func buildForTesting(_ sink: Sink = .terminal) throws {
-    try sh(sink, serializedCommand(action: "build-for-testing"))
+    try sh(sink, serializedCommand(action: "build-for-testing"), workingDirectory: workingDirectory)
   }
 }

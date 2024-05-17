@@ -3,7 +3,7 @@ import Sh
 extension Xcodebuild {
   /// lists the targets and configurations in a project, or the schemes in a workspace
   public func list() throws -> ProjectDescription {
-    try sh(ProjectDescription.self, serializedCommand(action: "-list -json"))
+    try sh(ProjectDescription.self, serializedCommand(action: "-list -json"), workingDirectory: workingDirectory)
   }
 }
 

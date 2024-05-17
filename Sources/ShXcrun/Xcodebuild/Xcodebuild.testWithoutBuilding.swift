@@ -7,9 +7,9 @@ extension Xcodebuild {
   /// bundles at paths specified in the xctestrun file.
   public func testWithoutBuilding(_ sink: Sink = .terminal, xctestrun: String? = nil) throws {
     if let xctestrun = xctestrun {
-      try sh(sink, serializedCommand(action: "-xctestrun \(xctestrun) test-without-building"))
+      try sh(sink, serializedCommand(action: "-xctestrun \(xctestrun) test-without-building"), workingDirectory: workingDirectory)
     } else {
-      try sh(sink, serializedCommand(action: "test-without-building"))
+      try sh(sink, serializedCommand(action: "test-without-building"), workingDirectory: workingDirectory)
     }
   }
 }

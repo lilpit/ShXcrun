@@ -24,6 +24,7 @@ public final class Xcodebuild {
   let authenticationKeyPath: String?
   let authenticationKeyID: String?
   let authenticationKeyIssuerID: String?
+  let workingDirectory: String?
 
   public init(project: String? = nil,
               workspace: String? = nil,
@@ -44,7 +45,8 @@ public final class Xcodebuild {
               allowProvisioningDeviceRegistration: Bool = false,
               authenticationKeyPath: String? = nil,
               authenticationKeyID: String? = nil,
-              authenticationKeyIssuerID: String? = nil) {
+              authenticationKeyIssuerID: String? = nil,
+              workingDirectory: String? = nil) {
     self.project = project
     self.workspace = workspace
     self.scheme = scheme
@@ -65,6 +67,7 @@ public final class Xcodebuild {
     self.authenticationKeyPath = authenticationKeyPath
     self.authenticationKeyID = authenticationKeyID
     self.authenticationKeyIssuerID = authenticationKeyIssuerID
+    self.workingDirectory = workingDirectory
   }
 
   func serializedCommand(action: String) -> String {
